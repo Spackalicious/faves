@@ -1,0 +1,17 @@
+<div class="panel panel-default">
+    <div class="panel-heading">
+      <div class="row pad-left-right">
+        <span class="pull-left title">Songs</span>
+        <a class="btn btn-success pull-right" [routerLink]="['new']">Add Song</a>
+      </div>
+    </div>
+    <div class="panel-body">
+      <div class="center-panel">
+        <app-song-item
+          *ngFor="let song of songsList, let i = index"
+          [song]="song"
+          [index]="i"
+        ></app-song-item>
+      </div>
+    </div>    
+  </div>
