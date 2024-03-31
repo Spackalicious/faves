@@ -1,4 +1,4 @@
-import { Injectable, EventEmitter } from '@angular/core';
+import { Injectable, EventEmitter, OnInit } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Subject } from 'rxjs';
 import { Song } from './song.model';
@@ -6,16 +6,19 @@ import { Song } from './song.model';
 @Injectable({
   providedIn: 'root'
 })
-export class SongService {
+export class SongService implements OnInit {
   songSelectedEvent = new EventEmitter<Song>;
   songListChangedEvent = new Subject<Song[]>();
 
   private songs: Song[] = [];
   url = 'http://localhost:3000/songs';
+  // private maxSongId: number = 0;  
 
   constructor(
     private http: HttpClient
-  ) { }
+  ) { 
+    // this.maxSongId = this.getMaxId();
+  }
 
   ngOnInit() {
     this.getSongs();
@@ -30,6 +33,11 @@ export class SongService {
 
         let songListClone: Song[] = this.songs.slice();
         this.songListChangedEvent.next(songListClone);
+        // console.log("THE SONG INFORMATION IS: ");
+        // for (let song of songListClone) {
+        //   console.log(song.id + " / " + song.title + " / " + song.artist + " / " + song.ytLink);
+        //   console.log(song.comments);
+        // }
       },
       error: (error) => {
         console.log('getSongs error: ' + error);
@@ -37,29 +45,55 @@ export class SongService {
     })
   }
 
-  getSong(id: string): Song {
+  // getSong(id: string): Song {
+  //   console.log("THIS SONG'S ID IS: " + id);
+  //   console.log("THIS SONG'S INFO: " + this.songSelectedEvent.toString);
+  //   return this.songs.find((d) => d.id === id);
+  // }
+  getSong(id: string) {
+    // console.log("THIS SONG'S ID IS: " + id);
+    // console.log("THIS SONG'S INFO: " + this.songSelectedEvent.toString);
     return this.songs.find((d) => d.id === id);
   }
 
-  sortAndSend(thing: any) {
-    thing.sort((a, b) => {
-      const nameA = a.name.toUpperCase(); 
-      const nameB = b.name.toUpperCase(); 
-      if (nameA < nameB) {
-        return -1;
-      }
-      if (nameA > nameB) {
-        return 1;
-      }      
-      return 0;
-    });
-  }
+  // getMaxId(): number {
+  //     let maxId = 0;
+  //     this.songs.forEach((d) => {
+  //       if (+d.id > maxId) {
+  //         maxId = +d.id;
+  //         console.log('New Songs!!! MaxId is ' + maxId);
+  //       }
+  //     });
+  //     return maxId;
+  // }
+
+  // sortAndSend(thing: Song[]) {
+  // sortAndSend(thing: any) {
+  //   // for(let song of thing) {
+
+  //     let artistName = thing.artist;
+  //     artistName.sort((a, b) => {
+  //       const nameA = a.name.toUpperCase(); 
+  //       const nameB = b.name.toUpperCase(); 
+  //       if (nameA < nameB) {
+  //         return -1;
+  //       }
+  //       if (nameA > nameB) {
+  //         return 1;
+  //       }      
+  //       return 0;
+  //     });
+  //   // }
+  // }
 
   addSong(newSong: Song) {
     if (!newSong) {
       return;
     }
+    // console.log('The current MaxID (SONGS) is: ' + this.maxSongId);
+    // newSong.id = String(++this.maxSongId);
     newSong.id = '';
+    // console.log('The new MaxID (SONGS) is: ' + this.maxSongId);
     const headers = new HttpHeaders({'Content-Type': 'application/json'});
     this.http.post<{
       message: string, 

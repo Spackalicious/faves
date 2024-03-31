@@ -3,6 +3,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
+import { YouTubePlayerModule } from '@angular/youtube-player';
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
@@ -12,6 +13,11 @@ import { SongEditComponent } from './songs/song-edit/song-edit.component';
 import { SongListComponent } from './songs/song-list/song-list.component';
 import { SongDetailComponent } from './songs/song-detail/song-detail.component';
 import { SongItemComponent } from './songs/song-item/song-item.component';
+import { BooksComponent } from './books/books.component';
+import { BookListComponent } from './books/book-list/book-list.component';
+import { BookItemComponent } from './books/book-item/book-item.component';
+import { BookEditComponent } from './books/book-edit/book-edit.component';
+import { BookDetailComponent } from './books/book-detail/book-detail.component';
 
 @NgModule({
   declarations: [
@@ -21,13 +27,19 @@ import { SongItemComponent } from './songs/song-item/song-item.component';
     SongEditComponent,
     SongListComponent,
     SongDetailComponent,
-    SongItemComponent
+    SongItemComponent,
+    BooksComponent,
+    BookListComponent,
+    BookItemComponent,
+    BookEditComponent,
+    BookDetailComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpClientModule,
-    AppRoutingModule
+    AppRoutingModule, 
+    YouTubePlayerModule
   ],
   providers: [
     provideAnimationsAsync()

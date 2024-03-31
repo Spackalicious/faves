@@ -8,7 +8,8 @@ import { Song } from '../song.model';
 })
 export class SongItemComponent implements OnInit{
 @Input() song: Song;
-@Input() index: number;
+// @Input() index: number;
+@Input() id: string;
 
 ngOnInit() { }
 

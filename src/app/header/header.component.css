@@ -21,7 +21,7 @@
     padding: 0px;
     background-color: white;
     border-radius: 5px;
-    border: solid white;
+    border: solid #CCDB38;
 }
 .nav li:hover {
     background-color: #F57D7C;
@@ -30,3 +30,8 @@
 .nav li:active {
     background-color: #CCDB38;
 }
+
+/* routerLinkActive:active {
+    background-color: purple;
+    THIS DOES NOTHING ;) 
+} */

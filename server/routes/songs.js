@@ -5,34 +5,6 @@ const mongoose = require('mongoose');
 const sequenceGenerator = require("./sequenceGenerator");
 const Song = require("../models/song");
 
-// router.get('/', async (req, res, next) => {
-//     var songsArray = new Array;
-//     await Song.find()
-//     .populate('comments')
-//     .then(songs => {
-//         for (song of songs) {
-//             let id = song.id;
-//             let title = song.title;
-//             let artist = song.artist;
-//             let ytLink = song.ytLink;
-//             let comments = [song.comments];
-//             songsArray.push({id, title, artist, ytLink, comments});
-//         }
-//         res.status(200).json({
-//             message: 'songs fetched successfully',
-//             songs: songsArray
-//         });
-//     })
-//     .catch(error => {
-//         res.status(500).json({
-//             message: 'An error occurred fetching songs',
-//             error: error 
-//         });
-//         console.log("SONGS ERROR: " + error.message);
-//     });
-//     console.log("ROUTES SONGS IS HERE");
-// });
-
 router.get('/', (req, res, next) => {
     Song.find()
     .populate('comments')
@@ -41,7 +13,7 @@ router.get('/', (req, res, next) => {
             message: "Retrieved songs from the database.",
             songs: songs,
         });
-        console.log("The songs in the DB are: " + songs);
+        // console.log("The songs in the DB are: " + songs);
     })
     .catch((err) => {
         res.status(500).json({

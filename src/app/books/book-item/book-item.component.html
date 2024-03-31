@@ -1,0 +1,10 @@
+<a 
+  class="list-group-item clearfix" 
+  style="cursor: pointer;"
+  [routerLink]="[book.id]"
+  routerLinkActive="active"
+>
+    <!-- Display book name here -->
+    <!-- the items are now linked by book.id and not index! -->
+    {{ book.author }} &nbsp; &nbsp;&nbsp;  | &nbsp;&nbsp;&nbsp;   {{ book.title }} 
+  </a>

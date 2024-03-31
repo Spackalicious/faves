@@ -1,6 +1,6 @@
 const Sequence = require('../models/sequence');
 var maxSongId;
-// var maxMessageId;
+var maxBookId;
 // var maxContactId;
 var sequenceId = null;
 
@@ -13,13 +13,15 @@ const sequenceGenerator = {
             }
             this.sequenceId = sequence._id;
             this.maxSongId = sequence.maxSongId;
-            // this.maxMessageId = sequence.maxMessageId;
+            this.maxBookId = sequence.maxBookId;
             // this.maxContactId = sequence.maxContactId;
             } catch (err) {
                 console.error('Error initializing SequenceGenerator:', err);
                 throw err;
             }
         },
+
+
 
     async nextId(collectionType) {
         console.log("The CollectionType is: " + collectionType);
@@ -32,17 +34,19 @@ const sequenceGenerator = {
         // try {
             switch (collectionType.toLowerCase()) {
             case 'songs':
+                console.log("Original maxSongId: " + maxSongId);
                 this.maxSongId++;
+                console.log("New maxSongId: " + maxSongId);
                 updateObject = { maxSongId: this.maxSongId };
                 nextId = this.maxSongId;
                 break;
-            // case 'messages':
-            //     // console.log("Current maxMessageId: " + maxMessageId);
-            //     this.maxMessageId++;
-            //     // console.log("New maxMessageId: " + maxMessageId);
-            //     updateObject = { maxMessageId: this.maxMessageId };
-            //     nextId = this.maxMessageId;
-            //     break;
+            case 'books':
+                console.log("Current maxBookId: " + maxBookId);
+                this.maxBookId++;
+                console.log("New maxBookId: " + maxBookId);
+                updateObject = { maxBookId: this.maxBookId };
+                nextId = this.maxBookId;
+                break;
             // case 'contacts':
             //     // console.log("Current maxContactId: " + maxContactId);
             //     this.maxContactId++;

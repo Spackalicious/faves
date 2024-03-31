@@ -1,8 +1,10 @@
-<div class="panel panel-default" xmlns="http://www.w3.org/1999/html">
-    <div class="panel-heading">
+<div class="song-detail panel panel-default" xmlns="http://www.w3.org/1999/html">
+    <div class="song-title-section panel-heading">
         <div class="row pad-all">
         <h4 class="title margin-left-right">{{song.title}}</h4>
-        <div class="row pull-right margin-left-right">
+        <h5 class="title margin-left-right">by {{song.artist}}</h5>
+        <!-- <div class="row pull-right margin-left-right"> -->
+        <div class="row song-buttons">
             <!-- <a class="btn btn-primary" (click)="onView()">View</a> -->
             <a class="btn btn-info" [routerLink]="['edit']">Edit</a>
             <a class="btn btn-danger" (click)="onDelete()">Delete</a>
@@ -10,16 +12,56 @@
         </div>
     </div>
     <div class="panel-body">
+        <!-- <iframe
+            [src]='safeURL'
+            frameborder="0"
+            height="400"
+            width="500"
+            allowfullscreen
+            >
+        </iframe> -->
+        <!-- <iframe width="560" height="315" src="{{song.ytLink}}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe> -->
         <div class="pad-left-right">
-        <div class="row">
-            <label>Artist:</label>
-            <span class="label-value"><!-- display song description here -->{{ song.artist }}</span>
-        </div>
-        <br>
-        <div class="row">
-            <label>URL:</label>
-            <span class="label-value"><!-- display song URL here -->{{ song.ytLink }}</span>
-        </div>
+            <div class="row">
+                <youtube-player [videoId]="videoId"></youtube-player>
+                <!-- <label>Song ID:&nbsp;</label>
+                <span class="label-value">{{ song.id }}</span> -->
+            </div>
+            <!-- <br>
+            <div class="row">
+                <label>Artist:&nbsp;</label>
+                <span class="label-value">{{ song.artist }}</span>
+            </div> -->
+            <br>
+            <!-- <div class="row">
+                <label>URL:&nbsp;</label>
+                <span class="label-value"><a target="_blank" href="{{ song.ytLink }}">{{song.ytLink}}</a></span>
+            </div> -->
+            <div class="row">
+                <label>Comments: </label>
+                <ul>
+                    <li 
+                    class="label-value"
+                    *ngFor="let comment of song.comments">
+                        {{ comment }} 
+                        <!-- <span><a class="pull-left" (click)="deleteComment">X</a></span> -->
+                    </li>
+                </ul>
+                <form id="add-comment" #ac="ngForm" (ngSubmit)="onSubmitComment(ac)">
+                    <label for="comment">Add Comment: </label>
+                    <input 
+                        type="text"
+                        id="comment"
+                        name="comment"
+
+                        class="form-control"
+                        size="120"
+                        max="120"
+                    >
+                    <button class="add-comment-btn btn btn-success" type="submit" [disabled]="!ac.valid">Save Comment</button>
+                    <p>THIS IS ALL IN THE SONG-DETAIL-COMPONENT, not working yet</p>
+                </form>
+            </div>
         </div>
     </div>
     </div>

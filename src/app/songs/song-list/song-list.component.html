@@ -12,6 +12,12 @@
           [song]="song"
           [index]="i"
         ></app-song-item>
+        <!-- you need the clickable part to be done by index, otherwise all the box is blue. -->
+        <!-- <app-song-item
+          *ngFor="let song of songsList, let id = {{song.id}}"
+          [song]="song"
+          [id]="id"
+        ></app-song-item> -->
       </div>
     </div>    
   </div>

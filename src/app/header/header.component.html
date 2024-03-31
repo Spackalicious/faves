@@ -16,12 +16,12 @@
 
         <div class="collapse navbar-collapse" [ngClass]="{ 'in': isNavbarCollapsed }">
             <ul class="nav navbar-nav">
-                <li routerLinkActive="active"><a [routerLink]="['/music']">Music</a></li>
                 <li routerLinkActive="active"><a [routerLink]="['/books']">Books</a></li>
-                <li routerLinkActive="active"><a [routerLink]="['/quotes']">Quotes</a></li>
+                <li routerLinkActive="active"><a [routerLink]="['/songs']">Music</a></li>
+                <!-- <li routerLinkActive="active"><a [routerLink]="['/quotes']">Quotes</a></li> -->
             </ul>
 
-            <ul class="nav navbar-nav navbar-right">
+            <!-- <ul class="nav navbar-nav navbar-right">
                 <li class="dropdown" [ngClass]="{ open: isUserDropdownOpen }">
                     <a href="" (click)="toggleUserDropdown()">User <span class="caret"></span></a>
                     <ul class="dropdown-menu" role="menu">
@@ -31,7 +31,7 @@
                         <li><a href="">Logout</a></li>
                     </ul>
                 </li>
-            </ul>
+            </ul> -->
         </div>
     </div>
 </nav>
