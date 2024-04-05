@@ -2,7 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute, Params, Router } from '@angular/router';
 import { Song } from '../song.model';
 import { SongService } from '../song.service';
-import { YouTubePlayerModule } from '@angular/youtube-player';
+// import { YouTubePlayerModule } from '@angular/youtube-player';
 import { NgForm } from '@angular/forms';
 // import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 

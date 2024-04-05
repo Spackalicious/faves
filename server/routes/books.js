@@ -7,22 +7,21 @@ const Book = require("../models/book");
 
 router.get('/', (req, res, next) => {
     Book.find()
-    .populate('author')
+    // .populate('author')
     .then((books) => {
         res.status(200).json({
             message: "Retrieved books from the database.",
             books: books,
         });
-        console.log("The books in the DB are: " + books);
+        // console.log("The books in the DB are: " + books);
     })
     .catch((err) => {
         res.status(500).json({
             message: "Error retrieving books from the database.",
             error: err
         });
-        console.log("ROUTER GET BOOKS ERROR IS: " + error.message);
+        // console.log("ROUTER GET BOOKS ERROR IS: " + error.message);
     });
-    // console.log('MONGODB RETURNS THESE BOOKS: ' + books);
 });
 
 router.post('/', async (req, res, next) => {

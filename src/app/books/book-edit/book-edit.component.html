@@ -32,8 +32,35 @@
               required
               #author="ngModel"
             >
+            <!-- <select name="author" id="author">
+              <option
+                *ngFor="author of authorList, let i = index"
+                value="{{ author.id }}"
+                [ngModel]="{{ bookAuthor }}"
+                #author="ngModel"
+              >{{ bookAuthor }}</option>
+            </select> -->
+
           </div>
         </div>
+  
+        <div class="row">
+          <div class="col-sm-12 form-group">
+            <label for="genre">Genre:</label>
+            <input
+              type="text"
+              id="genre"
+              name="genre"
+              [ngModel]="book?.genre"
+              class="form-control"
+              size="120"
+              max="255"
+              required
+              #genre="ngModel"
+            >
+          </div>
+        </div>
+
   
         <div class="row">
           <div class="col-sm-12 form-group">
@@ -48,9 +75,27 @@
               max="255"
               required
               #imgURL="ngModel">
-              <div class="alert alert-danger" *ngIf="!title.valid || !author.valid|| !imgURL.valid">
-                book Title, Author, and Image URL are required fields.
-              </div>
+              
+          </div>
+        </div>
+
+          
+        <div class="row">
+          <div class="col-sm-12 form-group">
+            <label for="myReview">Julie's Review:</label>
+            <input
+              type="text"
+              id="myReview"
+              name="myReview"
+              [ngModel]="book?.myReview"
+              class="form-control"
+              size="120"
+              max="255"
+              #myReview="ngModel"
+            >
+            <div class="alert alert-danger" *ngIf="!title.valid || !genre.valid || !author.valid|| !imgURL.valid">
+              book Title, Author, Genre, and Image URL are required fields.
+            </div>
           </div>
         </div>
   

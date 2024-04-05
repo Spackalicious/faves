@@ -24,14 +24,19 @@
     border: solid #CCDB38;
 }
 .nav li:hover {
-    background-color: #F57D7C;
-    
-}
-.nav li:active {
-    background-color: #CCDB38;
+    background-color: #F57D7C;    
 }
 
-/* routerLinkActive:active {
-    background-color: purple;
-    THIS DOES NOTHING ;) 
-} */
+.nav li:focus {
+    background-color: #56DAC2;
+}
+
+.nav li:active {
+    background-color: #CCDB38;
+    border: solid #56DAC2;
+}
+
+.loginButton {
+    position: absolute;
+    right: 15px;
+}

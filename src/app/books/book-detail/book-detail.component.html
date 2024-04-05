@@ -1,34 +1,27 @@
-<div class="panel panel-default" xmlns="http://www.w3.org/1999/html">
-    <div class="panel-heading">
-        <div class="row pad-all">
-        <h4 class="title margin-left-right">{{book.title}}</h4>
-        <div class="row pull-right margin-left-right">
-            <!-- <a class="btn btn-primary" (click)="onView()">View</a> -->
-            <a class="btn btn-info" [routerLink]="['edit']">Edit</a>
+<div class="book-detail panel panel-default" xmlns="http://www.w3.org/1999/html">
+    <div class="book-title-section">
+        <div class="book-title">
+            <h4><b>{{book.title}}</b></h4>
+            <!-- <h5><b>by </b>{{ author.name }}</h5> -->
+            <!-- <h5><b>by </b>{{ bookAuthor }}</h5> -->
+            <h5><b>by </b>{{ book.author }}</h5>
+            <!-- <h5><b>by </b>{{ authorInfo }}</h5> -->
+            <h5><b>Genre:</b> {{ book.genre }}</h5>
+        </div>
+        <div class="book-buttons">
+            <a class="btn btn-success" [routerLink]="['edit']">Edit</a>
             <a class="btn btn-danger" (click)="onDelete()">Delete</a>
         </div>
-        </div>
     </div>
-    <div class="panel-body">
-        <div class="pad-left-right">
-        <div class="row">
-            <label>Author:</label>
-            <span class="label-value">{{ book.author }}</span>
-            <label>Genre:</label>
-            <span class="label-value">{{ book.genre }}</span>
+    <hr>
+        <div class="book-div">
+            <img class="book-center" src="{{book.imgURL}}">
         </div>
-        <br>
-        <div class="row">
-            <label>Cover:</label>
-            <!-- <span class="label-value">{{ book.url }}</span> -->
-            <img src="{{book.imgURL}}">
+        <hr>
+        <div>
+            <p><b>Julie's Thoughts: </b>{{ book.myReview }}</p>
+            <!-- <span class="label-value">{{ book.myReview }}</span> -->
         </div>
-        <div class="row">
-            <label>Julie's Thoughts:</label>
-            <span class="label-value">{{ book.myReview }}</span>
-        </div>
-        </div>
-    </div>
     </div>
     
     

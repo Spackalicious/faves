@@ -31,6 +31,19 @@ export class SongService implements OnInit {
         this.songs = songData.songs;
         // this.sortAndSend(this.songs);
 
+        this.songs.sort((a, b) => {
+          const nameA = a.artist.toUpperCase();
+          const nameB = b.artist.toUpperCase();
+          if (nameA < nameB) {
+            return -1;
+          }
+          if (nameA > nameB) {
+            return 1;
+          }
+          // names must be equal
+          return 0;
+        });
+
         let songListClone: Song[] = this.songs.slice();
         this.songListChangedEvent.next(songListClone);
         // console.log("THE SONG INFORMATION IS: ");
@@ -42,7 +55,7 @@ export class SongService implements OnInit {
       error: (error) => {
         console.log('getSongs error: ' + error);
       }
-    })
+    });
   }
 
   // getSong(id: string): Song {

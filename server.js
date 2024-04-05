@@ -13,8 +13,10 @@ dotenv.config();
 var index = require('./server/routes/app');
 // Get defined routing files (Wk10 Assignment Part II Instruction 1)
 const songRoutes = require('./server/routes/songs');
-// const contactRoutes = require('./server/routes/contacts');
-// const documentRoutes = require('./server/routes/documents');
+const bookRoutes = require('./server/routes/books');
+const authorRoutes = require('./server/routes/authors');
+const sequenceRoutes = require('./server/routes/sequences');
+
 
 // ... ADD CODE TO IMPORT YOUR ROUTING FILES HERE ... ------------------------------------------------------------------------------------------
 var app = express(); // create an instance of express
@@ -51,8 +53,10 @@ app.use('/', index);
 
 // ... ADD YOUR CODE TO MAP YOUR URL'S TO ROUTING FILES HERE 
 app.use('/songs', songRoutes);
-// app.use('/contacts', contactRoutes);
-// app.use('/documents', documentRoutes);
+app.use('/books', bookRoutes);
+app.use('/authors', authorRoutes);
+app.use('/sequences', sequenceRoutes);
+
 
 // Tell express to map all other non-defined routes back to the index page
 app.get('*', (req, res) => {

@@ -17,15 +17,16 @@
         <div class="collapse navbar-collapse" [ngClass]="{ 'in': isNavbarCollapsed }">
             <ul class="nav navbar-nav">
                 <li routerLinkActive="active"><a [routerLink]="['/books']">Books</a></li>
-                <li routerLinkActive="active"><a [routerLink]="['/songs']">Music</a></li>
+                <li routerLinkActive="active"><a [routerLink]="['/songs']">Songs</a></li>
                 <!-- <li routerLinkActive="active"><a [routerLink]="['/quotes']">Quotes</a></li> -->
+                <li class="loginButton" routerLinkActive="active"><a [routerLink]="['/login']">Login</a></li>
             </ul>
 
             <!-- <ul class="nav navbar-nav navbar-right">
                 <li class="dropdown" [ngClass]="{ open: isUserDropdownOpen }">
                     <a href="" (click)="toggleUserDropdown()">User <span class="caret"></span></a>
                     <ul class="dropdown-menu" role="menu">
-                        <li><a href="">Login</a></li>
+                        <li routerLinkActive="active"><a [routerLink]="['/login']">Login</a></li>
                         <li><a href="">Other</a></li>
                         <li role="separator" class="divider"></li>
                         <li><a href="">Logout</a></li>
