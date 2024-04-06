@@ -22,6 +22,11 @@ import { BookEditComponent } from './books/book-edit/book-edit.component';
 import { BookDetailComponent } from './books/book-detail/book-detail.component';
 import { LoginComponent } from './login/login.component';
 
+import { AuthModule } from '@auth0/auth0-angular';
+import { environment as env } from '../environments/environment';
+import { LoginButtonComponent } from './login-button/login-button.component';
+import { LogoutButtonComponent } from './logout-button/logout-button.component';
+
 // import { AuthorsComponent } from './authors/authors.component';
 
 @NgModule({
@@ -38,7 +43,9 @@ import { LoginComponent } from './login/login.component';
     BookItemComponent,
     BookEditComponent,
     BookDetailComponent,
-    LoginComponent
+    LoginComponent,
+    LoginButtonComponent,
+    LogoutButtonComponent
     // AuthorsComponent
   ],
   imports: [
@@ -47,7 +54,10 @@ import { LoginComponent } from './login/login.component';
     FormsModule,
     HttpClientModule,
     AppRoutingModule, 
-    YouTubePlayerModule
+    YouTubePlayerModule, 
+    AuthModule.forRoot({
+      ... env.auth,
+    })
   ],
   providers: [
     provideAnimationsAsync()

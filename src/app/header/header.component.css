@@ -24,7 +24,7 @@
     border: solid #CCDB38;
 }
 .nav li:hover {
-    background-color: #F57D7C;    
+    background-color: #56DAC2;    
 }
 
 .nav li:focus {
@@ -32,11 +32,11 @@
 }
 
 .nav li:active {
-    background-color: #CCDB38;
-    border: solid #56DAC2;
+    background-color: #56DAC2;
+    border: solid #F57D7C;
 }
 
-.loginButton {
+/* .loginButton {
     position: absolute;
     right: 15px;
-}
+} */

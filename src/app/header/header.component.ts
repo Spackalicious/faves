@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { AuthService } from '@auth0/auth0-angular';
 
 @Component({
   selector: 'app-header',
@@ -7,15 +8,23 @@ import { Component } from '@angular/core';
 })
 export class HeaderComponent {
     // NAVIGATION TOGGLES
-    isUserDropdownOpen: boolean = false;
+    // isUserDropdownOpen: boolean = false;
     isNavbarCollapsed: boolean = true;
 
-    toggleUserDropdown() {
-      this.isUserDropdownOpen = !this.isUserDropdownOpen;
-    }
+    constructor(
+      public auth: AuthService
+    ) { }
+
+    // toggleUserDropdown() {
+    //   this.isUserDropdownOpen = !this.isUserDropdownOpen;
+    // }
   
     toggleNavbar() {
       this.isNavbarCollapsed = !this.isNavbarCollapsed;
+    }
+
+    loginWithRedirect(): void {
+      this.auth.loginWithRedirect();
     }
 
 }

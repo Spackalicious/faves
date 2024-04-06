@@ -12,7 +12,8 @@ export class AuthorService implements OnInit {
   authorListChangedEvent = new Subject<Author[]>();
 
   private authors: Author[] = [];
-  url = 'http://localhost:3000/authors';
+  // url = 'http://localhost:3000/authors';
+  url = 'https://faves-server.onrender.com/authors';
 
   constructor(
     private http: HttpClient
