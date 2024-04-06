@@ -7,7 +7,6 @@ import { YouTubePlayerModule } from '@angular/youtube-player';
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
-import { HeaderComponent } from './header/header.component';
 
 import { SongsComponent } from './songs/songs.component';
 import { SongEditComponent } from './songs/song-edit/song-edit.component';
@@ -23,14 +22,11 @@ import { BookDetailComponent } from './books/book-detail/book-detail.component';
 
 import { AuthModule } from '@auth0/auth0-angular';
 import { environment as env } from '../environments/environment';
-import { LoginButtonComponent } from './login-button/login-button.component';
-import { LogoutButtonComponent } from './logout-button/logout-button.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    HeaderComponent,
     SongsComponent,
     SongEditComponent,
     SongListComponent,
@@ -40,9 +36,7 @@ import { LogoutButtonComponent } from './logout-button/logout-button.component';
     BookListComponent,
     BookItemComponent,
     BookEditComponent,
-    BookDetailComponent,
-    LoginButtonComponent,
-    LogoutButtonComponent
+    BookDetailComponent
   ],
   imports: [
     BrowserModule,

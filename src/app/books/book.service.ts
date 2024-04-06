@@ -2,8 +2,6 @@ import { Injectable, EventEmitter, OnInit } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Subject } from 'rxjs';
 import { Book } from './book.model';
-// import { Author } from '../authors/author.model';
-// import { AuthorService } from '../authors/author.service';
 
 @Injectable({
   providedIn: 'root'
@@ -17,8 +15,7 @@ export class BookService implements OnInit {
   url = 'https://faves-server.onrender.com/books';
 
   constructor(
-    private http: HttpClient,
-    // private authorService: AuthorService
+    private http: HttpClient
   ) { }
 
   ngOnInit() {
@@ -28,10 +25,8 @@ export class BookService implements OnInit {
   getBooks() {
     this.http.get(this.url, {responseType: 'json'})
     .subscribe({
-      // next: (bookData: {message: string, books: Book[]}) => {
       next: (bookData: {message: string, books: Book[]}) => {
         this.books = bookData.books;
-        // this.sortAndSend(this.books);
 
         this.books.sort((a, b) => {
           const nameA = a.author.toUpperCase();
@@ -47,10 +42,6 @@ export class BookService implements OnInit {
 
         let bookListClone: Book[] = this.books.slice();
         this.bookListChangedEvent.next(bookListClone);
-        // console.log("THE BOOK INFO IS: ");
-        // for (let book of bookListClone) {
-        //   console.log(book.id + " / " + book.title + " / " + book.author + " / " + book.genre);
-        // }
       },
       error: (error) => {
         console.log('The getBooks ERROR says ' + error.message.toString());
@@ -61,20 +52,6 @@ export class BookService implements OnInit {
   getBook(id: string) {
     return this.books.find((d) => d.id === id);
   }
-
-  // getAuthor(id: string) {
-  //       const book = this.getBook(id);
-  //       // const author: Author = book.author;
-  //       const authorInfo = JSON.stringify(book.author);
-  //       const authInfoArray = authorInfo.split('"');
-  //       console.log(authInfoArray);
-  //       const wordName = authInfoArray.indexOf("name");
-  //       console.log("The word Name is at spot: " + wordName);
-  //       const authSpot = wordName + 2;
-  //       console.log("The author is at location: " + authSpot);
-  //       const bookAuthor = authInfoArray[authSpot];
-  //       return bookAuthor;
-  // }
 
   addBook(newBook: Book) {
     if (!newBook) {
