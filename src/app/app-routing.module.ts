@@ -9,8 +9,6 @@ import { BooksComponent } from './books/books.component';
 import { BookDetailComponent } from './books/book-detail/book-detail.component';
 import { BookEditComponent } from './books/book-edit/book-edit.component';
 
-import { AuthorsComponent } from './authors/authors.component';
-import { LoginComponent } from './login/login.component';
 
 const appRoutes: Routes = [
   { path: '', redirectTo: '/books', pathMatch: 'full' }, 
@@ -23,9 +21,7 @@ const appRoutes: Routes = [
     { path: 'new', component: BookEditComponent, data: { message: 'Create New Book Entry Here'} },
     { path: ':id', component: BookDetailComponent }, 
     { path: ':id/edit', component: BookEditComponent }
-  ]},
-  { path: 'authors', component: AuthorsComponent },
-  { path: 'login', component: LoginComponent}
+  ]}
 ];
 
 @NgModule({

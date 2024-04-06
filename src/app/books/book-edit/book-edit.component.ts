@@ -3,8 +3,6 @@ import { NgForm } from '@angular/forms';
 import { ActivatedRoute, Params, Router } from '@angular/router';
 import { Book } from '../book.model';
 import { BookService } from '../book.service';
-import { Author } from '../../authors/author.model';
-import { AuthorService } from '../../authors/author.service';
 
 @Component({
   selector: 'app-book-edit',
@@ -17,16 +15,13 @@ export class BookEditComponent implements OnInit {
   editMode: boolean = false;
 
   bookAuthor: string = '';
-  author: Author;
   authorInfo: string;
-  authorList: Author[] = [];
 
 
   constructor(
     private route: ActivatedRoute,
     private router: Router,
     private bookService: BookService,
-    private authorService: AuthorService
   ) { }
 
   ngOnInit() {
@@ -52,7 +47,6 @@ export class BookEditComponent implements OnInit {
         console.log("The author is at location: " + authSpot);
         this.bookAuthor = authInfoArray[authSpot];
       });
-      this.authorList = this.authorService.getAuthors();
   }
 
   onCancel() {

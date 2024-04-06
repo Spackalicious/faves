@@ -20,14 +20,12 @@ import { BookListComponent } from './books/book-list/book-list.component';
 import { BookItemComponent } from './books/book-item/book-item.component';
 import { BookEditComponent } from './books/book-edit/book-edit.component';
 import { BookDetailComponent } from './books/book-detail/book-detail.component';
-import { LoginComponent } from './login/login.component';
 
 import { AuthModule } from '@auth0/auth0-angular';
 import { environment as env } from '../environments/environment';
 import { LoginButtonComponent } from './login-button/login-button.component';
 import { LogoutButtonComponent } from './logout-button/logout-button.component';
 
-// import { AuthorsComponent } from './authors/authors.component';
 
 @NgModule({
   declarations: [
@@ -43,13 +41,10 @@ import { LogoutButtonComponent } from './logout-button/logout-button.component';
     BookItemComponent,
     BookEditComponent,
     BookDetailComponent,
-    LoginComponent,
     LoginButtonComponent,
     LogoutButtonComponent
-    // AuthorsComponent
   ],
   imports: [
-    // LoginComponent,
     BrowserModule,
     FormsModule,
     HttpClientModule,

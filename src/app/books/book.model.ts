@@ -1,5 +1,3 @@
-import { Author } from "../authors/author.model";
-
 export class Book {
 
     constructor(
