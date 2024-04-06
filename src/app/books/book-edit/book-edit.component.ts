@@ -15,7 +15,7 @@ export class BookEditComponent implements OnInit {
   editMode: boolean = false;
 
   bookAuthor: string = '';
-  authorInfo: string;
+  authorInfo: string; 
 
 
   constructor(
