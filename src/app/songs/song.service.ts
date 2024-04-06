@@ -11,7 +11,8 @@ export class SongService implements OnInit {
   songListChangedEvent = new Subject<Song[]>();
 
   private songs: Song[] = [];
-  url = 'http://localhost:3000/songs';
+  // url = 'http://localhost:3000/songs';
+  url = 'https://faves-server.onrender.com/songs';
   // private maxSongId: number = 0;  
 
   constructor(
@@ -118,7 +119,8 @@ export class SongService implements OnInit {
           this.songs.push(responseData.song);
         }
       );
-      location.assign('http://localhost:4200/songs');
+      // location.assign('http://localhost:4200/songs');
+      location.assign('https://juliefaves.netlify.app/songs');
   }
 
   updateSong(originalSong: Song, newSong: Song) {
@@ -139,6 +141,7 @@ export class SongService implements OnInit {
       }
     );
     location.assign('http://localhost:4200/songs');
+    location.assign('https://juliefaves.netlify.app/songs');
   }
 
   deleteSong(song: Song) {
@@ -156,7 +159,8 @@ export class SongService implements OnInit {
         this.songs.splice(pos, 1);
       }
     );
-    location.assign('http://localhost:4200/songs');
+    // location.assign('http://localhost:4200/songs');
+    location.assign('https://juliefaves.netlify.app/songs');
   }
 
 }

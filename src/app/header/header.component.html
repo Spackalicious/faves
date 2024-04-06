@@ -19,8 +19,12 @@
                 <li routerLinkActive="active"><a [routerLink]="['/books']">Books</a></li>
                 <li routerLinkActive="active"><a [routerLink]="['/songs']">Songs</a></li>
                 <!-- <li routerLinkActive="active"><a [routerLink]="['/quotes']">Quotes</a></li> -->
-                <li class="loginButton" routerLinkActive="active"><a [routerLink]="['/login']">Login</a></li>
+                <!-- <li class="loginButton" routerLinkActive="active"><a [routerLink]="['/login']">Login</a></li> -->
+                <!-- <li class="loginButton"><a (click)="loginWithRedirect()">Login</a></li> -->
             </ul>
+            <app-login-button
+                *ngIf="(auth.isAuthenticated$ | async) === false"
+            ></app-login-button>
 
             <!-- <ul class="nav navbar-nav navbar-right">
                 <li class="dropdown" [ngClass]="{ open: isUserDropdownOpen }">
