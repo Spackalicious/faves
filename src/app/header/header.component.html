@@ -19,9 +19,10 @@
                 <li routerLinkActive="active"><a [routerLink]="['/books']">Books</a></li>
                 <li routerLinkActive="active"><a [routerLink]="['/songs']">Songs</a></li>
             </ul>
-            <app-login-button
+            <!-- <app-login-button
                 *ngIf="(auth.isAuthenticated$ | async) === false"
-            ></app-login-button>
+            ></app-login-button> -->
+            <app-login-button></app-login-button>
 
         </div>
     </div>

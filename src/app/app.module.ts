@@ -21,6 +21,7 @@ import { BookEditComponent } from './books/book-edit/book-edit.component';
 import { BookDetailComponent } from './books/book-detail/book-detail.component';
 
 import { HeaderComponent } from './header/header.component';
+import { LoginButtonComponent } from './login-button/login-button.component';
 
 import { AuthModule } from '@auth0/auth0-angular';
 import { environment as env } from '../environments/environment';
@@ -39,7 +40,8 @@ import { environment as env } from '../environments/environment';
     BookItemComponent,
     BookEditComponent,
     BookDetailComponent, 
-    HeaderComponent
+    HeaderComponent, 
+    LoginButtonComponent
   ],
   imports: [
     BrowserModule,
