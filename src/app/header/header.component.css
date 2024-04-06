@@ -1,0 +1,37 @@
+@import url('https://fonts.googleapis.com/css2?family=Arvo&family=Kumbh+Sans:wght@300&family=Londrina+Outline&display=swap');
+
+.navbar {
+    background-color: grey;
+    border-top: #56DAC2 solid;
+    border-bottom: #56DAC2 solid;
+}
+
+.navbar-brand {
+    font-family: "Londrina Outline", sans-serif;
+    font-size: 50px;
+    font-weight: 600;
+    color: #CCDB38;
+    margin: 20px 10px;
+}
+
+.nav li {
+    margin: 20px 10px;
+    padding: 0px;
+    background-color: white;
+    border-radius: 5px;
+    border: solid #CCDB38;
+}
+.nav li:hover {
+    background-color: #56DAC2;    
+}
+
+.nav li:focus {
+    background-color: #56DAC2;
+}
+
+.nav li:active {
+    background-color: #56DAC2;
+    border: solid #F57D7C;
+}
+
+

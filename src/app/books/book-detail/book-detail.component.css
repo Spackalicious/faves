@@ -1,0 +1,53 @@
+.book-detail {
+  padding: 10px;
+  width: 662px;
+}
+
+.book-title-section {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 0;
+  padding: 0;
+}
+
+.book-title-section h4, h5 {
+  margin: 0;
+}
+
+.book-buttons .btn {
+  margin: 0 0 0 10px;
+}
+
+  .book-div {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+  .book-center {
+    margin: 0 auto;
+    width: 300px;
+  }
+
+  .btn-success {
+    background-color: #56DAC2;
+    color: #616161;
+    font-weight: 500;
+    }
+    
+    .btn-success:hover {
+    background-color: #CCDB38;
+    }
+    
+    .btn-danger {
+        background-color: #F57D7C;
+        color: #b4b4b4;
+        font-weight: 500;
+        border: solid 1px grey;
+    }
+    
+    .btn-danger:hover {
+        background-color: grey;
+        color: #F57D7C;
+        
+    }

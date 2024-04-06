@@ -1,0 +1,26 @@
+<div class="book-detail panel panel-default" xmlns="http://www.w3.org/1999/html">
+    <div class="book-title-section">
+        <div class="book-title">
+            <h4><b>{{book.title}}</b></h4>
+
+            <h5><b>by </b>{{ book.author }}</h5>
+
+            <h5><b>Genre:</b> {{ book.genre }}</h5>
+        </div>
+        <div class="book-buttons">
+            <a class="btn btn-success" [routerLink]="['edit']">Edit</a>
+            <a class="btn btn-danger" (click)="onDelete()">Delete</a>
+        </div>
+    </div>
+    <hr>
+        <div class="book-div">
+            <img class="book-center" src="{{book.imgURL}}">
+        </div>
+        <hr>
+        <div>
+            <p><b>Julie's Thoughts: </b>{{ book.myReview }}</p>
+
+        </div>
+    </div>
+    
+    

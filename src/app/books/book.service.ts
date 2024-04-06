@@ -11,8 +11,8 @@ export class BookService implements OnInit {
   bookListChangedEvent = new Subject<Book[]>();
 
   private books: Book[] = [];
-  // url = 'http://localhost:3000/books';
-  url = 'https://faves-server.onrender.com/books';
+  url = 'http://localhost:3000/books';
+  // url = 'https://faves-server.onrender.com/books';
 
   constructor(
     private http: HttpClient
@@ -69,8 +69,8 @@ export class BookService implements OnInit {
           this.books.push(responseData.book);
         }
       );
-      // location.assign('http://localhost:4200/books');
-      location.assign('https://juliefaves.netlify.app/books');
+      location.assign('http://localhost:4200/books');
+      // location.assign('https://juliefaves.netlify.app/books');
   }
 
   updateBook(originalBook: Book, newBook: Book) {
@@ -90,8 +90,8 @@ export class BookService implements OnInit {
         this.books[pos] = newBook;
       }
     );
-    // location.assign('http://localhost:4200/books');
-    location.assign('https://juliefaves.netlify.app/books');
+    location.assign('http://localhost:4200/books');
+    // location.assign('https://juliefaves.netlify.app/books');
   }
 
   deleteBook(book: Book) {
@@ -109,8 +109,8 @@ export class BookService implements OnInit {
         this.books.splice(pos, 1);
       }
     );
-    // location.assign('http://localhost:4200/books');
-    location.assign('https://juliefaves.netlify.app/books');
+    location.assign('http://localhost:4200/books');
+    // location.assign('https://juliefaves.netlify.app/books');
   }
 
 }

@@ -1,0 +1,27 @@
+input.ng-invalid {
+    border: 1px solid red;
+  }
+  
+
+
+.alert {
+  margin: 15px 0 0 0;
+}
+
+.btn-success {
+  background-color: #56DAC2;
+  border: solid pink;
+}
+
+.btn-success:hover {
+  background-color: #CCDB38;
+}
+
+.btn-primary {
+  background-color: #616161;
+  color: #56DAC2;
+}
+.btn-primary:hover {
+  color: #616161;
+  background-color: #56DAC2;
+}

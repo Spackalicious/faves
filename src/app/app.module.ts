@@ -20,6 +20,8 @@ import { BookItemComponent } from './books/book-item/book-item.component';
 import { BookEditComponent } from './books/book-edit/book-edit.component';
 import { BookDetailComponent } from './books/book-detail/book-detail.component';
 
+import { HeaderComponent } from './header/header.component';
+
 import { AuthModule } from '@auth0/auth0-angular';
 import { environment as env } from '../environments/environment';
 
@@ -36,7 +38,8 @@ import { environment as env } from '../environments/environment';
     BookListComponent,
     BookItemComponent,
     BookEditComponent,
-    BookDetailComponent
+    BookDetailComponent, 
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
